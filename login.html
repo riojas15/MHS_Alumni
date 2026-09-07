@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Log in | Martin Alumni</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="site-header"><div class="container"><a class="brand" href="index.html">Martin Alumni</a></div></header>
+<main class="container narrow">
+  <div class="card">
+    <h2>Member login</h2>
+    <p class="muted">Sign in to access the private alumni directory.</p>
+    <form id="login-form">
+      <label>Email<input id="email" type="email" required autocomplete="email"></label>
+      <label>Password<input id="password" type="password" required autocomplete="current-password"></label>
+      <button class="button full" type="submit">Log in</button>
+      <p id="message" class="message"></p>
+    </form>
+    <p class="center">New member? <a href="register.html">Create an account</a></p>
+  </div>
+</main>
+<script type="module" src="js/config.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body></html>

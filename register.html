@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join | Martin Alumni</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="site-header"><div class="container"><a class="brand" href="index.html">Martin Alumni</a></div></header>
+<main class="container narrow">
+  <div class="card">
+    <h2>Join the alumni directory</h2>
+    <p class="muted">Your account will require email verification and your directory profile will remain pending until an administrator approves it.</p>
+    <form id="register-form">
+      <div class="two"><label>First name<input id="first_name" required></label><label>Last name<input id="last_name" required></label></div>
+      <label>Email<input id="email" type="email" required autocomplete="email"></label>
+      <label>Password<input id="password" type="password" minlength="8" required autocomplete="new-password"></label>
+      <label>Graduation year<input id="graduation_year" type="number" min="1900" max="2100" required></label>
+      <label>Street address<input id="street_address" autocomplete="street-address"></label>
+      <div class="two"><label>City<input id="city" autocomplete="address-level2"></label><label>State<input id="state" value="TX" maxlength="2"></label></div>
+      <label>ZIP code<input id="zip" autocomplete="postal-code"></label>
+      <label>Phone<input id="phone" type="tel" autocomplete="tel"></label>
+      <fieldset><legend>What may other approved alumni see?</legend>
+        <label class="check"><input id="show_address" type="checkbox"> Show my full street address</label>
+        <label class="check"><input id="show_phone" type="checkbox"> Show my phone number</label>
+        <label class="check"><input id="show_email" type="checkbox"> Show my email address</label>
+        <label class="check"><input id="allow_messages" type="checkbox" checked> Allow other alumni to contact me privately</label>
+      </fieldset>
+      <label class="check"><input id="consent" type="checkbox" required> I authorize my approved profile to be included in this private alumni directory.</label>
+      <button class="button full" type="submit">Create account</button>
+      <p id="message" class="message"></p>
+    </form>
+  </div>
+</main>
+<script type="module" src="js/config.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body></html>

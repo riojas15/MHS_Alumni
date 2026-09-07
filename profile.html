@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Profile | Martin Alumni</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">Martin Alumni</a><nav><a href="directory.html">Directory</a><a href="messages.html">Messages</a></nav></div></header>
+<main class="container narrow"><div class="card"><h2>My profile</h2><p id="approval" class="notice"></p>
+<form id="profile-form">
+<label>First name<input id="first_name" required></label><label>Last name<input id="last_name" required></label><label>Graduation year<input id="graduation_year" type="number" required></label>
+<label>Street address<input id="street_address"></label><div class="two"><label>City<input id="city"></label><label>State<input id="state"></label></div><label>ZIP code<input id="zip"></label><label>Phone<input id="phone" type="tel"></label>
+<fieldset><legend>Privacy</legend>
+<label class="check"><input id="show_address" type="checkbox"> Show my full street address</label>
+<label class="check"><input id="show_phone" type="checkbox"> Show my phone number</label>
+<label class="check"><input id="show_email" type="checkbox"> Show my email address</label>
+<label class="check"><input id="allow_messages" type="checkbox"> Allow private messages</label>
+</fieldset>
+<button class="button full">Save changes</button><p id="message" class="message"></p>
+</form></div></main>
+<script type="module" src="js/config.js"></script><script type="module" src="js/profile.js"></script>
+</body></html>
