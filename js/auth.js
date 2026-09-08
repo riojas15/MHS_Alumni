@@ -1,7 +1,4 @@
-import {
-        supabase,
-        SITE_BASE
-       } from "./supabase-client.js";
+import { supabase } from "./supabase-client.js";
 
 const msg = document.querySelector("#message");
 const register = document.querySelector("#register-form");
