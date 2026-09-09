@@ -1,4 +1,9 @@
-import { supabase } from "./supabase-client.js";
+import {
+  supabase,
+  SUPABASE_URL,
+  SUPABASE_PULISHABLE_KEY,
+  SITE_BASE
+} from "./supabase-client.js";
 
 const msg = document.querySelector("#message");
 const register = document.querySelector("#register-form");
@@ -14,7 +19,7 @@ if (register) {
     const password = document.querySelector("#password").value;
     const { data, error } = await supabase.auth.signUp({
       email, password,
-      options: { emailRedirectTo: SITE_BASE + "/profile.html",
+      options: { emailRedirectTo: SITE_BASE + "profile.html",
         data: { first_name: document.querySelector("#first_name").value.trim(),
                 last_name: document.querySelector("#last_name").value.trim() } }
     });
