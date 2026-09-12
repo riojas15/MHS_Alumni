@@ -14,7 +14,7 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   first_name text not null,
   last_name text not null,
-  graduation_year integer not null check (graduation_year between 1900 and 2100),
+  graduation_year integer not null check (graduation_year between 1940 and 2040),
   street_address text,
   city text,
   state text default 'TX',

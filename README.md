@@ -48,7 +48,7 @@ The intended Pages URL is:
 
 `https://riojas15.github.io/MHS_Alumni/`
 
-GitHub deploys the repository to GitHUb Pages. In GitHub, use **Settings ? Pages ? Build and deployment ? Source ? Deploy from a branch.
+GitHub deploys the repository to GitHUb Pages. In GitHub, use **Settings >> Pages >> Build and deployment >> Source >> Deploy from a branch.**
 
 ## Important
 
