@@ -14,7 +14,14 @@ if (register) {
     const email = document.querySelector("#email").value.trim();
     const password = document.querySelector("#password").value;
     const graduation_year = Number(document.querySelector("#graduation_year").value);
-    if (!first_name || !last_name || !Number.isInteger(graduation_year) || graduation_year < 1940 || graduation_year > 2040) return show("Please enter a valid name and graduation year.", true);
+    // GRAD_MIN/GRAD_MAX must match the profiles_graduation_year_check
+    // constraint and the handle_new_user() bounds in sql/schema.sql.
+    // If they drift apart, the database rejects the insert and signUp()
+    // fails with an opaque "Database error saving new user".
+    const GRAD_MIN = 1940, GRAD_MAX = 2040;
+    if (!first_name || !last_name) return show("Please enter your first and last name.", true);
+    if (!Number.isInteger(graduation_year) || graduation_year < GRAD_MIN || graduation_year > GRAD_MAX)
+      return show(`Please enter a graduation year between ${GRAD_MIN} and ${GRAD_MAX}.`, true);
     if (!document.querySelector("#consent").checked) return show("Please authorize your profile to be included in the private directory.", true);
 
     const metadata = {
