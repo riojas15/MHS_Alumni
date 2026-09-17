@@ -5,7 +5,7 @@
 <header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">Martin Alumni</a><nav><a href="directory.html">Directory</a><a href="messages.html">Messages</a></nav></div></header>
 <main class="container narrow"><div class="card"><h2>My profile</h2><p id="approval" class="notice"></p>
 <form id="profile-form">
-<label>First name<input id="first_name" required></label><label>Last name<input id="last_name" required></label><label>Graduation year<input id="graduation_year" type="number" required></label>
+<label>First name<input id="first_name" required></label><label>Last name<input id="last_name" required></label><label>Graduation year<input id="graduation_year" type="number" min="1940" max="2040" step="1" required></label>
 <label>Street address<input id="street_address"></label><div class="two"><label>City<input id="city"></label><label>State<input id="state"></label></div><label>ZIP code<input id="zip"></label><label>Phone<input id="phone" type="tel"></label>
 <fieldset><legend>Privacy</legend>
 <label class="check"><input id="show_address" type="checkbox"> Show my full street address</label>
