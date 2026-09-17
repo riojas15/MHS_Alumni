@@ -14,7 +14,7 @@ if (register) {
     const email = document.querySelector("#email").value.trim();
     const password = document.querySelector("#password").value;
     const graduation_year = Number(document.querySelector("#graduation_year").value);
-    if (!first_name || !last_name || !Number.isInteger(graduation_year) || graduation_year < 1900 || graduation_year > 2100) return show("Please enter a valid name and graduation year.", true);
+    if (!first_name || !last_name || !Number.isInteger(graduation_year) || graduation_year < 1940 || graduation_year > 2040) return show("Please enter a valid name and graduation year.", true);
     if (!document.querySelector("#consent").checked) return show("Please authorize your profile to be included in the private directory.", true);
 
     const metadata = {
