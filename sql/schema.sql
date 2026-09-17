@@ -152,9 +152,9 @@ begin
   begin
     y := (new.raw_user_meta_data->>'graduation_year')::integer;
   exception when others then
-    y := 1900;
+    y := 1940;
   end;
-  if y is null or y < 1900 or y > 2100 then y := 1900; end if;
+  if y is null or y < 1940 or y > 2040 then y := 1940; end if;
 
   insert into public.profiles (
     id, first_name, last_name, graduation_year, street_address, city, state,
