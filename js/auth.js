@@ -64,3 +64,26 @@ if (login) {
 }
 const logout = document.querySelector("#logout");
 if (logout) logout.onclick = async () => { await supabase.auth.signOut(); location.href = SITE_BASE + "index.html"; };
+
+const forgotToggle = document.querySelector("#forgot-toggle");
+const resetRequest = document.querySelector("#reset-request-form");
+if (forgotToggle && resetRequest) {
+  forgotToggle.addEventListener("click", e => {
+    e.preventDefault();
+    resetRequest.hidden = !resetRequest.hidden;
+    forgotToggle.textContent = resetRequest.hidden ? "Forgot your password?" : "Back to login";
+  });
+  const resetMsg = document.querySelector("#reset-message");
+  function showReset(text, error=false) { if (resetMsg) { resetMsg.textContent=text; resetMsg.className="message "+(error?"error":"success"); } }
+  resetRequest.addEventListener("submit", async e => {
+    e.preventDefault(); showReset("Sending reset link…");
+    const email = document.querySelector("#reset-email").value.trim();
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: SITE_BASE + "reset-password.html"
+    });
+    // Supabase intentionally returns success even for an unregistered email,
+    // to avoid revealing which addresses have accounts.
+    if (error) return showReset(error.message, true);
+    showReset("If that email is registered, a reset link is on its way. Check your inbox.");
+  });
+}
